@@ -1,7 +1,8 @@
+const db = require("./db/index");
 const User = require('./models/user')
 const express = require('express');
 const PORT = process.env.PORT || 3000;
-const db = require("./db/index");
+
 // const user = require('./models/user');
 
 const app = express()
@@ -27,18 +28,18 @@ app.get('/users', async (req, res) => {
 //if there is an error, we will not
 // see it 
 //unless we use a try catch
-// app.get('/users/:id', async (req, res) => {
-//   try {
-//     const { id } = req.params
-//     const users = await User.findById(id)
-//     if(!users) throw Error ('User not found')
-//     res.json(users)
+app.get('/users/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const users = await User.findById(id)
+    if(!users) throw Error ('User not found')
+    res.json(users)
 
-//   } catch (e) {
-//     console.log(e)
-//     res.send('User not found!')
-//   }
-// })
+  } catch (e) {
+    console.log(e)
+    res.send('User not found!')
+  }
+})
 
 // app.get('/names/:name',async (req,res) => {
 //   try{

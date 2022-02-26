@@ -53,12 +53,12 @@ const deleteaUser = async () => {
 
 
 const run = async () => {
-  // await findAllUsers()
-  // await findaUsers()
+  await findAllUsers()
+   //await findaUsers()
   // await createUser()
   //  await updateaUser()
     // await findaUserGrt()
-  await findaUserlsYoung()
+  //await findaUserlsYoung()
     //await deleteaUser()
     db.close()
 }
